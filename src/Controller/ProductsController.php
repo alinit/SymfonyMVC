@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductRepository;
 use function PHPUnit\Framework\throwException;
 
-class FirstController extends AbstractController
+class ProductsController extends AbstractController
 {
     /**
-     * @Route("/first", name="first_homepage")
+     * @Route("/", name="first_homepage")
      */
     public function homepage(ProductRepository $repo): Response
     {
