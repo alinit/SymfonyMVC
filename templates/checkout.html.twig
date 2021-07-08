@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <h1>Checkout</h1>
+        <div class="row">
+            <h3>Total: {{ total | number_format(2)}}</h3>
+        </div>
+        {{ form(form) }}
+    </div>
+
+    {% block content %}{% endblock %}
+{% endblock %}

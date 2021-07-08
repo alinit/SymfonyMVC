@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Bikes list</h1>
+    {% for bike in basket %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ bike.image }}" class="card-img-top" alt="{{ bike.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ bike.name }}</h5>
+                <p class="card-text">{{ bike.description }}</p>
+                <span>{{ bike.price }}</span>
+            </div>
+            <form method="post">
+                <button class="btn btn-info">Remove</button>
+                <input type="hidden" value="{{ bike.id }}" name="id">
+            </form>
+        </div>
+    {% endfor %}
+    <p>Total: {{ total | number_format(2) }}</p>
+    <p>Quantity {{ total_products }}</p>
+    {% block content %}{% endblock %}
+{% endblock %}

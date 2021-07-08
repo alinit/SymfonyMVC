@@ -1,0 +1,47 @@
+$baseline: 24px;
+@import "~bootstrap/scss/bootstrap";
+body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+footer {
+    background-color: lightblue;
+    padding: $baseline;
+
+    hr {
+        display: none;
+    }
+}
+
+header {
+    background-color: lightblue;
+    font-size: 300%;
+    padding: $baseline;
+
+    hr {
+        display: none;
+    }
+}
+
+main {
+    padding: $baseline;
+}
+
+.product_name {
+    text-align: center;
+    text-transform: uppercase;
+    color: darkorange;
+}
+
+.product {
+    background: lightgreen;
+    border: 1px solid black;
+    max-width: 33%;
+    padding: 10px;
+}
+
+.product_image {
+    text-align: center;
+}
