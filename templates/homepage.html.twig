@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bikes list</h1>
+
     <div class="container">
-        <button class="btn-danger">test</button>
+        <h1>Bikes list</h1>
         <ul class="list-group">
             {% for bike in bikes %}
                 <li class="list-group-item">{{ bike.name }}</li>
