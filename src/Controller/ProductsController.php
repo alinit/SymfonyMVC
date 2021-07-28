@@ -19,7 +19,7 @@ class ProductsController extends AbstractController
     {
         $bikes = $repo->findAll();
 
-        return $this->render('homepage.html.twig', ['bikes' => $bikes]);
+        return $this->render('app.html.twig');
     }
 
     /**

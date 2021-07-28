@@ -1,11 +1,45 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
-
-// any CSS you import will output into a single css file (app.scss in this case)
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './css/app.scss';
-// start the Stimulus application
 import './bootstrap';
+import Items from './js/Components/Items';
+
+
+class App extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            entries: []
+        };
+    }
+
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/posts/')
+            .then(response => response.json())
+            .then(entries => {
+                this.setState({
+                    entries
+                });
+            });
+    }
+
+    render() {
+        return (
+            <div className="row">
+                {this.state.entries.map(
+                    ({ id, title, body }) => (
+                        <Items
+                            key={id}
+                            title={title}
+                            body={body}
+                        >
+                        </Items>
+                    )
+                )}
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));

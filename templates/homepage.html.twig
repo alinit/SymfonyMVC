@@ -2,15 +2,5 @@
 
 {% block body %}
 
-    <div class="container">
-        <h1>Bikes list</h1>
-        <ul class="list-group">
-            {% for bike in bikes %}
-                <li class="list-group-item">{{ bike.name }}</li>
-                <li class="list-group-item"><a href="http://localhost:8000/first/{{bike.id}}"><img src="{{ bike.image }}"></a></li>
-            {% endfor %}
-        </ul>
-    </div>
-
     {% block content %}{% endblock %}
 {% endblock %}
